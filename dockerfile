@@ -1,4 +1,5 @@
 FROM centos:latest
+
 MAINTAINER bmahajan0@gmail.com
 
 RUN yum -y install wget* java-1.8.0*
@@ -9,4 +10,4 @@ RUN wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0
 
 ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /opt/apache-tomcat-9.0.29/webapps/
 
-RUN RUN tar -xzvf /opt/apache-tomcat-9.0.29.tar.gz
+CMD tar -xzvf /opt/apache-tomcat-9.0.29.tar.gz
