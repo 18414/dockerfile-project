@@ -10,4 +10,9 @@ RUN wget http://apache.cs.utah.edu/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0
 
 ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /opt/apache-tomcat-9.0.29/webapps/
 
-CMD tar -xzvf /opt/apache-tomcat-9.0.29.tar.gz
+RUN tar -xzvf /opt/apache-tomcat-9.0.29.tar.gz
+
+EXPOSE 8080
+
+ENTRYPOINT ["/opt/apache-tomcat-9.0.29/bin/catalina.sh", "run"]
+
